@@ -45,7 +45,7 @@ class PokemonListVC: UIViewController {
     func setTableViewDelegates() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(PokemonCell.self, forCellReuseIdentifier: "cellId")
         
     }
 }
