@@ -13,6 +13,7 @@ class PokemonCell: UITableViewCell {
     
     let imageIV  = UIImageView()
     let nameLabel = UILabel()
+    let typeLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,6 +27,8 @@ class PokemonCell: UITableViewCell {
     func setupView(){
       
         configureImageView()
+        configureNameLabel()
+        configureTypeLabel()
     }
     
     func configureImageView() {
@@ -42,8 +45,15 @@ class PokemonCell: UITableViewCell {
         addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 5).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-        
+        nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
+        nameLabel.font = UIFont(name: "Verdana-Bold", size: 16)
+    }
+    func configureTypeLabel(){
+        addSubview(typeLabel)
+        typeLabel.translatesAutoresizingMaskIntoConstraints = false
+        typeLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 5).isActive = true
+        typeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        typeLabel.font = UIFont(name: "Verdana", size: 14)
     }
     
     

@@ -61,8 +61,14 @@ extension PokemonListVC: UITableViewDelegate, UITableViewDataSource {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) // give cell an id
         
         let pokemon = pokemonList[indexPath.row] //point to data
+        //casting normal uitableviewcell as a custom cell
         
-        cell.textLabel?.text = pokemon.name // add text to cell
+        guard let pokemonCell = cell as? PokemonCell else {
+            return cell
+        }
+        
+        pokemonCell.nameLabel.text = pokemon.name // add text to cell
+        pokemonCell.typeLabel.text = pokemon.type
         return cell
     }
     
