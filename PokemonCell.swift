@@ -11,7 +11,7 @@ class PokemonCell: UITableViewCell {
     
     //initialise uiimageview
     
-    let imageIV  = UIImageView()
+    let imageIV  = CustomImageView()
     let nameLabel = UILabel()
     let typeLabel = UILabel()
     
@@ -39,7 +39,7 @@ class PokemonCell: UITableViewCell {
         imageIV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         imageIV.widthAnchor.constraint(equalToConstant: 40).isActive = true
         imageIV.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        imageIV.backgroundColor = .systemRed
+       
     }
     func configureNameLabel() {
         addSubview(nameLabel)

@@ -69,7 +69,12 @@ extension PokemonListVC: UITableViewDelegate, UITableViewDataSource {
         
         pokemonCell.nameLabel.text = pokemon.name // add text to cell
         pokemonCell.typeLabel.text = pokemon.type
-        return cell
+        //pokemonCell.imageIV.image = pokemon.imageUrl
+        if let url  = URL(string: pokemon.imageUrl!) {
+            
+            pokemonCell.imageIV.loadImage(from: url)
+        }
+                return cell
     }
     
     
