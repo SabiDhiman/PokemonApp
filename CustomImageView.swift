@@ -11,6 +11,7 @@ import UIKit
 class CustomImageView: UIImageView {
     
     func loadImage(from url : URL) {
+        image = nil
         //define task
         let task = URLSession.shared.dataTask(with: url){
             
